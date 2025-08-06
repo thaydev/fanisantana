@@ -1,0 +1,753 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amar Entre Tempestades</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Raleway:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Raleway', sans-serif;
+            color: #333;
+            line-height: 1.7;
+            background-color: #f9f4f8;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        
+        .ebook-container {
+            width: 100%;
+            max-width: 800px;
+            background: white;
+            box-shadow: 0 10px 50px rgba(0,0,0,0.15);
+            position: relative;
+            margin: 30px auto;
+        }
+        
+        /* Capa */
+        .cover {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 40px;
+            background: linear-gradient(135deg, #f9d6e4 0%, #f8c0d5 30%, #e8a0c0 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .cover-content {
+            position: relative;
+            z-index: 10;
+            max-width: 700px;
+            padding: 20px;
+        }
+        
+        .cover-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.8rem;
+            font-weight: 700;
+            margin-bottom: 25px;
+            color: #5a2d50;
+            line-height: 1.15;
+            text-transform: uppercase;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+        }
+        
+        .cover-subtitle {
+            font-size: 2rem;
+            font-weight: 400;
+            margin: 0 auto 35px;
+            line-height: 1.5;
+            max-width: 90%;
+            position: relative;
+            padding-bottom: 25px;
+            color: #5a2d50;
+        }
+        
+        .cover-subtitle::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 150px;
+            height: 2px;
+            background: linear-gradient(to right, transparent, #9c4668, transparent);
+        }
+        
+        .author {
+            font-size: 1.8rem;
+            font-style: italic;
+            font-weight: 500;
+            margin-top: 40px;
+            letter-spacing: 1px;
+            color: #7a355e;
+        }
+        
+        /* Conteúdo do Ebook */
+        .ebook-content {
+            padding: 60px 50px;
+            background-color: #fff;
+        }
+        
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.4rem;
+            font-weight: 700;
+            margin-bottom: 30px;
+            color: #5a2d50;
+            position: relative;
+            padding-bottom: 15px;
+        }
+        
+        .section-title::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 80px;
+            height: 3px;
+            background: #e8a0c0;
+        }
+        
+        .section-content {
+            margin-bottom: 50px;
+            page-break-inside: avoid;
+        }
+        
+        .section-content p {
+            margin-bottom: 25px;
+            text-align: justify;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+        
+        .quote {
+            background: #fdf3f7;
+            border-left: 4px solid #e8a0c0;
+            padding: 25px;
+            margin: 30px 0;
+            font-style: italic;
+            border-radius: 0 8px 8px 0;
+            position: relative;
+            page-break-inside: avoid;
+        }
+        
+        .quote p {
+            margin: 0;
+            font-size: 1.2rem;
+            color: #7a355e;
+        }
+        
+        .quote::before {
+            content: """;
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            font-size: 5rem;
+            font-family: Georgia, serif;
+            color: #f8c0d5;
+            line-height: 1;
+        }
+        
+        /* Conteúdo específico */
+        .promise-box {
+            background: linear-gradient(135deg, #f9d6e4 0%, #f8c0d5 100%);
+            border-radius: 10px;
+            padding: 25px;
+            margin: 30px 0;
+            border-left: 5px solid #9c4668;
+            page-break-inside: avoid;
+        }
+        
+        .promise-title {
+            display: flex;
+            align-items: center;
+            font-weight: bold;
+            margin-bottom: 15px;
+            color: #5a2d50;
+            font-size: 1.4rem;
+        }
+        
+        .promise-title .icon {
+            margin-right: 10px;
+            font-size: 1.6rem;
+        }
+        
+        .module-content {
+            margin: 40px 0;
+            page-break-inside: avoid;
+        }
+        
+        .module-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            margin: 40px 0 25px;
+            color: #7a355e;
+            position: relative;
+            padding-left: 35px;
+        }
+        
+        .module-title::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 15px;
+            width: 25px;
+            height: 25px;
+            background: #e8a0c0;
+            border-radius: 50%;
+        }
+        
+        .episode-list {
+            margin: 25px 0 35px;
+            padding-left: 35px;
+            page-break-inside: avoid;
+        }
+        
+        .episode-list li {
+            margin-bottom: 15px;
+            position: relative;
+        }
+        
+        .episode-list li::before {
+            content: "•";
+            color: #e8a0c0;
+            font-weight: bold;
+            font-size: 1.5rem;
+            position: absolute;
+            left: -25px;
+            top: -3px;
+        }
+        
+        .example-box {
+            background: #fdf3f7;
+            border-radius: 8px;
+            padding: 25px;
+            margin: 30px 0;
+            border: 1px dashed #e8a0c0;
+            page-break-inside: avoid;
+        }
+        
+        .example-title {
+            font-weight: bold;
+            margin-bottom: 15px;
+            color: #9c4668;
+            display: flex;
+            align-items: center;
+            font-size: 1.3rem;
+        }
+        
+        .example-title .icon {
+            margin-right: 12px;
+            font-size: 1.5rem;
+        }
+        
+        .evidence-box {
+            background: #f0e6f4;
+            border-radius: 8px;
+            padding: 25px;
+            margin: 30px 0;
+            border-left: 4px solid #8e6aa0;
+            page-break-inside: avoid;
+        }
+        
+        .evidence-title {
+            font-weight: bold;
+            margin-bottom: 15px;
+            color: #5a2d50;
+            display: flex;
+            align-items: center;
+            font-size: 1.3rem;
+        }
+        
+        .evidence-title .icon {
+            margin-right: 12px;
+            font-size: 1.5rem;
+        }
+        
+        .signs-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin: 35px 0;
+            page-break-inside: avoid;
+        }
+        
+        .signs-box {
+            background: #fff;
+            border-radius: 8px;
+            padding: 30px 25px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            border-top: 4px solid #e8a0c0;
+        }
+        
+        .signs-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            color: #7a355e;
+            text-align: center;
+        }
+        
+        .signs-list {
+            list-style-type: none;
+            padding: 0;
+        }
+        
+        .signs-list li {
+            padding: 10px 0;
+            border-bottom: 1px solid #f0e6f4;
+            display: flex;
+            align-items: flex-start;
+        }
+        
+        .signs-list li:last-child {
+            border-bottom: none;
+        }
+        
+        .signs-list li::before {
+            content: "→";
+            color: #e8a0c0;
+            margin-right: 12px;
+            font-size: 1.2rem;
+        }
+        
+        .module-summary {
+            background: #f8f4ff;
+            border-radius: 10px;
+            padding: 30px;
+            margin: 30px 0;
+            border-left: 3px solid #9c4668;
+            page-break-inside: avoid;
+        }
+        
+        .module-summary h4 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.6rem;
+            margin-bottom: 20px;
+            color: #5a2d50;
+        }
+        
+        .module-summary p {
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+            line-height: 1.7;
+        }
+        
+        /* Botão de impressão */
+        .print-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #7a355e;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 30px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            transition: all 0.3s ease;
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .print-button:hover {
+            background: #5a2d50;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+        }
+        
+        /* Estilos específicos para impressão */
+        @media print {
+            body {
+                background: #fff !important;
+                padding: 0;
+                margin: 0;
+                display: block;
+            }
+            
+            .ebook-container {
+                box-shadow: none;
+                max-width: 100%;
+                margin: 0;
+            }
+            
+            .cover {
+                background: linear-gradient(135deg, #f9d6e4 0%, #f8c0d5 30%, #e8a0c0 100%) !important;
+                -webkit-print-color-adjust: exact;
+                color-adjust: exact;
+                min-height: 100vh;
+                height: 100vh;
+                page-break-after: always;
+            }
+            
+            .ebook-content {
+                padding: 40px 60px !important;
+                background: white !important;
+            }
+            
+            .print-button {
+                display: none;
+            }
+            
+            .promise-box, .quote, .example-box, .evidence-box, .module-summary {
+                -webkit-print-color-adjust: exact;
+                color-adjust: exact;
+            }
+            
+            .section-title::after, .cover-subtitle::after {
+                -webkit-print-color-adjust: exact;
+                color-adjust: exact;
+            }
+            
+            /* Quebras de página */
+            .section-content {
+                page-break-before: always;
+                page-break-after: avoid;
+            }
+            
+            .section-content:first-child {
+                page-break-before: avoid;
+            }
+            
+            .signs-container {
+                page-break-inside: avoid;
+            }
+        }
+        
+        /* Responsividade */
+        @media (max-width: 768px) {
+            .cover-title {
+                font-size: 2.8rem;
+            }
+            .cover-subtitle {
+                font-size: 1.6rem;
+            }
+            .author {
+                font-size: 1.5rem;
+            }
+            .section-title {
+                font-size: 2rem;
+            }
+            .ebook-content {
+                padding: 40px 30px;
+            }
+            .module-title {
+                font-size: 1.7rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .cover-title {
+                font-size: 2.3rem;
+            }
+            .cover-subtitle {
+                font-size: 1.3rem;
+            }
+            .cover {
+                padding: 20px 15px;
+            }
+            .ebook-content {
+                padding: 30px 20px;
+            }
+            .signs-container {
+                grid-template-columns: 1fr;
+            }
+            .print-button {
+                padding: 12px 20px;
+                font-size: 1rem;
+                bottom: 15px;
+                right: 15px;
+            }
+        }
+        
+        /* Decoração */
+        .floral-divider {
+            width: 100px;
+            height: 20px;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 20'%3E%3Cpath d='M10,5 Q15,0 20,5 T30,5 T40,5 T50,5 T60,5 T70,5 T80,5 T90,5 T100,5' stroke='%23e8a0c0' stroke-width='2' fill='none'/%3E%3Ccircle cx='10' cy='5' r='2' fill='%23e8a0c0'/%3E%3Ccircle cx='30' cy='5' r='2' fill='%23e8a0c0'/%3E%3Ccircle cx='50' cy='5' r='2' fill='%23e8a0c0'/%3E%3Ccircle cx='70' cy='5' r='2' fill='%23e8a0c0'/%3E%3Ccircle cx='90' cy='5' r='2' fill='%23e8a0c0'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: center;
+            margin: 40px auto;
+        }
+        
+        .page-footer {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #f0e6f4;
+            font-style: italic;
+            color: #7a355e;
+        }
+    </style>
+</head>
+<body>
+    <button class="print-button" onclick="window.print()">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="6 9 6 2 18 2 18 9"></polyline>
+            <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path>
+            <rect x="6" y="14" width="12" height="8"></rect>
+        </svg>
+        Imprimir Ebook
+    </button>
+    
+    <div class="ebook-container">
+        <!-- Capa -->
+        <section class="cover">
+            <div class="cover-content">
+                <h1 class="cover-title">AMAR ENTRE TEMPESTADES</h1>
+                
+                <p class="cover-subtitle">
+                    Identificar, Compreender e Amar<br>
+                    Alguém com Transtorno Bipolar
+                </p>
+                
+                <div class="author">FANI SANTANA</div>
+            </div>
+        </section>
+        
+        <!-- Conteúdo do Ebook -->
+        <div class="ebook-content">
+            <!-- Introdução -->
+            <section class="section-content">
+                <h2 class="section-title">Convivendo com um Bipolar: Como Identificar, Entender e Amar sem se Perder</h2>
+                
+                <div class="promise-box">
+                    <div class="promise-title">
+                        <span class="icon">💡</span> Transformação prometida
+                    </div>
+                    <p>Depois de ler este e-book, você vai parar de se sentir perdido ou culpado. Vai aprender a identificar sinais precoces, entender o que é comportamento da pessoa e o que é efeito do transtorno, e vai ter ferramentas para lidar com crises de forma mais leve e saudável.</p>
+                </div>
+                
+                <h3 class="module-title">Introdução: Antes da Primeira Chuva</h3>
+                <p>Um convite para compreender que amar alguém com transtorno bipolar não é navegar em mar calmo. É aprender a dançar na chuva, enxergando a beleza mesmo nas tempestades.</p>
+                
+                <div class="quote">
+                    <p>"O amor não consiste em olhar um para o outro, mas em olharem juntos na mesma direção." - Antoine de Saint-Exupéry</p>
+                </div>
+                
+                <div class="floral-divider"></div>
+            </section>
+            
+            <!-- Módulo 1 -->
+            <section class="section-content">
+                <h2 class="section-title">Módulo 1 – O Céu Antes da Tormenta</h2>
+                <h3 class="module-title">O que realmente é o Transtorno Bipolar (e por que não é só "mudança de humor")</h3>
+                
+                <p>Se você já conviveu com alguém bipolar, provavelmente pensou: "Nossa, mas ontem ele estava tão bem... e hoje parece outra pessoa!".</p>
+                
+                <p>Isso não é drama, frescura ou falta de controle. O transtorno bipolar é uma condição real que afeta a forma como o cérebro regula o humor, a energia e até a forma de se relacionar.</p>
+                
+                <p>O problema é que muita gente acha que bipolaridade é só "feliz num dia, triste no outro", quando na verdade vai muito além. Existem fases chamadas episódios:</p>
+                
+                <ul class="episode-list">
+                    <li><strong>Mania ou hipomania:</strong> quando a pessoa fica acelerada, impulsiva, com autoestima nas alturas, muitas ideias e pouca necessidade de sono.</li>
+                    <li><strong>Depressão bipolar:</strong> uma fase de tristeza profunda, falta de energia e até dificuldade para sentir prazer nas coisas simples.</li>
+                    <li><strong>Eutimia:</strong> quando a pessoa está estável (e sim, isso existe!).</li>
+                </ul>
+                
+                <p>E sabe a parte mais importante? Quem ama alguém com bipolaridade precisa aprender a diferenciar o que é "a pessoa" e o que é "o transtorno". Isso muda tudo na forma de lidar com as crises e até na maneira de conversar durante um conflito.</p>
+                
+                <div class="example-box">
+                    <div class="example-title">
+                        <span class="icon">💡</span> Exemplo real
+                    </div>
+                    <p>Imagina que você está namorando alguém que, de repente, entra numa fase de mania. Ele começa a fazer planos grandiosos: quer abrir uma empresa, viajar para três países ao mesmo tempo e ainda comprar um carro novo -- tudo em um só mês! Se você não entende a bipolaridade, isso gera brigas e acusações. Mas se você entende, percebe que não é apenas "loucura" ou "irresponsabilidade". É um episódio, e ele passa.</p>
+                </div>
+                
+                <div class="evidence-box">
+                    <div class="evidence-title">
+                        <span class="icon">🔎</span> Por que isso faz sentido (embasamento)
+                    </div>
+                    <p>Pesquisas em neurociência mostram que, durante as fases de mania ou depressão, há alterações nos neurotransmissores do cérebro, como dopamina e serotonina. Essas mudanças influenciam diretamente o comportamento, a motivação e a forma de se relacionar. Isso explica por que não adianta só "pedir para a pessoa se controlar" -- é como pedir para alguém gripado "parar de espirrar".</p>
+                    <p>Quando você entende isso, para de levar tudo para o lado pessoal e começa a enxergar a relação com mais empatia e estratégia.</p>
+                </div>
+                
+                <div class="page-footer">Amar Entre Tempestades | Página 2</div>
+            </section>
+            
+            <!-- Módulo 2 -->
+            <section class="section-content">
+                <h2 class="section-title">Módulo 2 – Olhando o Temporal de Perto</h2>
+                <h3 class="module-title">Como identificar sinais precoces (e evitar crises)</h3>
+                
+                <p>Uma das coisas mais difíceis de quem convive com um bipolar é perceber <strong>quando algo está prestes a mudar</strong>. De repente, a pessoa que estava bem começa a dormir menos, falar mais rápido, ou então se isola completamente.</p>
+                
+                <p>Se você consegue identificar esses sinais cedo, consegue agir antes que a crise fique gigante.</p>
+                
+                <div class="signs-container">
+                    <div class="signs-box">
+                        <h4 class="signs-title">Antes de uma fase de mania:</h4>
+                        <ul class="signs-list">
+                            <li>Fala acelerada e muitas ideias ao mesmo tempo</li>
+                            <li>Sono reduzido (e a pessoa jura que "tá ótima")</li>
+                            <li>Gastos impulsivos ou projetos mirabolantes</li>
+                            <li>Mais irritabilidade do que o normal</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="signs-box">
+                        <h4 class="signs-title">Antes de uma fase depressiva:</h4>
+                        <ul class="signs-list">
+                            <li>Falta de interesse por coisas que antes animavam</li>
+                            <li>Sono excessivo ou dificuldade extrema para dormir</li>
+                            <li>Reclamações de cansaço constante</li>
+                            <li>Se fechar para amigos, família ou parceiro</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="example-box">
+                    <div class="example-title">
+                        <span class="icon">💡</span> Exemplo real
+                    </div>
+                    <p>"Meu namorado começou a dormir só 4 horas por noite e dizia que não precisava de mais. De repente, comprou uma bicicleta caríssima sem me contar. Antes eu brigava e dizia que ele era irresponsável. Hoje, quando vejo esses sinais, sei que é hora de sugerir que ele fale com o médico antes que a crise piore."</p>
+                </div>
+                
+                <div class="evidence-box">
+                    <div class="evidence-title">
+                        <span class="icon">🔎</span> Por que isso faz sentido (embasamento)
+                    </div>
+                    <p>Estudos mostram que crises de bipolaridade quase nunca surgem "do nada". Elas são precedidas por pequenas mudanças comportamentais e fisiológicas, como alteração no sono e na impulsividade. Reconhecer esses sinais é como ver a luz de alerta no painel do carro: quanto antes você age, menos dano acontece.</p>
+                    <p>Saber identificar esses gatilhos não só evita brigas no relacionamento, mas também ajuda a proteger a saúde mental de quem você ama -- e a sua própria paz.</p>
+                </div>
+                
+                <div class="page-footer">Amar Entre Tempestades | Página 3</div>
+            </section>
+            
+            <!-- Módulo 3 -->
+            <section class="section-content">
+                <h2 class="section-title">Módulo 3 – Quando a Tempestade Mora no Cérebro</h2>
+                
+                <div class="module-summary">
+                    <h4>Explicação da química por trás do transtorno</h4>
+                    <p>Este módulo explora os mecanismos neurológicos do transtorno bipolar, incluindo o papel dos neurotransmissores como dopamina e serotonina, o impacto do lítio no tratamento, e como a medicação contribui para a estabilidade emocional.</p>
+                </div>
+                
+                <div class="page-footer">Amar Entre Tempestades | Página 4</div>
+            </section>
+            
+            <!-- Módulo 4 -->
+            <section class="section-content">
+                <h2 class="section-title">Módulo 4 – A Ciência que Acalma os Céus</h2>
+                
+                <div class="module-summary">
+                    <h4>Discussão sobre medicamentos e terapias</h4>
+                    <p>Análise de como diferentes abordagens terapêuticas atuam para transformar tempestades emocionais em períodos de calmaria, incluindo terapia cognitivo-comportamental, terapia familiar e intervenções medicamentosas.</p>
+                </div>
+                
+                <div class="page-footer">Amar Entre Tempestades | Página 5</div>
+            </section>
+            
+            <!-- Módulo 5 -->
+            <section class="section-content">
+                <h2 class="section-title">Módulo 5 – Amar no Olho do Furacão</h2>
+                
+                <div class="module-summary">
+                    <h4>Mantendo o amor vivo durante o caos</h4>
+                    <p>Estratégias para preservar a conexão emocional mesmo durante as fases mais intensas do transtorno, mantendo o relacionamento saudável quando as tempestades parecem maiores que a calmaria.</p>
+                </div>
+                
+                <div class="page-footer">Amar Entre Tempestades | Página 6</div>
+            </section>
+            
+            <!-- Módulo 6 -->
+            <section class="section-content">
+                <h2 class="section-title">Módulo 6 – Quando o Cuidado Vira Peso</h2>
+                
+                <div class="module-summary">
+                    <h4>O equilíbrio entre apoio e autocuidado</h4>
+                    <p>Importância de entender que você não é o salvador da pessoa com transtorno bipolar: como acompanhar sem perder a si mesmo e estabelecer limites saudáveis.</p>
+                </div>
+                
+                <div class="page-footer">Amar Entre Tempestades | Página 7</div>
+            </section>
+            
+            <!-- Módulo 7 -->
+            <section class="section-content">
+                <h2 class="section-title">Módulo 7 – Entre Crises e Calmarias</h2>
+                
+                <div class="module-summary">
+                    <h4>Estratégias práticas para relacionamentos</h4>
+                    <p>Técnicas emocionais e práticas para manter a relação saudável mesmo durante os piores dias, incluindo comunicação não violenta e planejamento conjunto para crises.</p>
+                </div>
+                
+                <div class="page-footer">Amar Entre Tempestades | Página 8</div>
+            </section>
+            
+            <!-- Módulo 8 -->
+            <section class="section-content">
+                <h2 class="section-title">Módulo 8 – A Arte de Acompanhar, Não de Carregar</h2>
+                
+                <div class="module-summary">
+                    <h4>Diferença entre apoiar e se anular</h4>
+                    <p>Como estabelecer limites saudáveis e, se necessário, encerrar uma relação sem se afogar na culpa, preservando sua saúde mental e bem-estar.</p>
+                </div>
+                
+                <div class="page-footer">Amar Entre Tempestades | Página 9</div>
+            </section>
+            
+            <!-- Módulo 9 -->
+            <section class="section-content">
+                <h2 class="section-title">Módulo 9 – Guia de Navegação</h2>
+                
+                <div class="module-summary">
+                    <h4>Checklist poético e prático</h4>
+                    <p>Bússolas essenciais para quem ama no meio das tempestades: recursos práticos, lembretes emocionais e estratégias de curto e longo prazo para navegar pelo transtorno bipolar.</p>
+                </div>
+                
+                <div class="page-footer">Amar Entre Tempestades | Página 10</div>
+            </section>
+            
+            <!-- Módulo 10 -->
+            <section class="section-content">
+                <h2 class="section-title">Módulo 10 – Depois da Tempestade</h2>
+                
+                <div class="module-summary">
+                    <h4>Fechamento acolhedor</h4>
+                    <p>Reflexões finais sobre como o amor não é a ausência de tempestades, mas a capacidade de atravessá-las juntos e ainda encontrar o sol após a chuva.</p>
+                </div>
+                
+                <div class="quote">
+                    <p>"A maior descoberta de qualquer geração é que um ser humano pode alterar sua vida alterando sua atitude." - William James</p>
+                </div>
+                
+                <div class="page-footer">Amar Entre Tempestades | Página 11</div>
+            </section>
+        </div>
+    </div>
+    
+    <script>
+        // Adiciona números de página dinamicamente
+        document.addEventListener('DOMContentLoaded', function() {
+            const sections = document.querySelectorAll('.section-content');
+            let pageNum = 2;
+            
+            sections.forEach((section, index) => {
+                const footer = section.querySelector('.page-footer');
+                if(footer) {
+                    footer.textContent = `Amar Entre Tempestades | Página ${pageNum}`;
+                    pageNum++;
+                }
+            });
+        });
+    </script>
+</body>
+</html>
