@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Amar Entre Tempestades</title>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Raleway:wght@300;400;500&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -13,25 +12,20 @@
         }
         
         body {
-            font-family: 'Raleway', sans-serif;
+            font-family: 'Georgia', serif;
             color: #333;
             line-height: 1.7;
             background-color: #f9f4f8;
             padding: 0;
             margin: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
         }
         
         .ebook-container {
-            width: 100%;
             max-width: 800px;
-            background: white;
-            box-shadow: 0 10px 50px rgba(0,0,0,0.15);
+            margin: 0 auto;
+            background-color: #fff;
+            box-shadow: 0 0 30px rgba(0,0,0,0.1);
             position: relative;
-            margin: 30px auto;
         }
         
         /* Capa */
@@ -42,7 +36,7 @@
             justify-content: center;
             align-items: center;
             text-align: center;
-            padding: 40px;
+            padding: 20px;
             background: linear-gradient(135deg, #f9d6e4 0%, #f8c0d5 30%, #e8a0c0 100%);
             position: relative;
             overflow: hidden;
@@ -57,17 +51,17 @@
         
         .cover-title {
             font-family: 'Playfair Display', serif;
-            font-size: 3.8rem;
+            font-size: 3.5rem;
             font-weight: 700;
             margin-bottom: 25px;
             color: #5a2d50;
             line-height: 1.15;
             text-transform: uppercase;
-            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
         }
         
         .cover-subtitle {
-            font-size: 2rem;
+            font-size: 1.8rem;
             font-weight: 400;
             margin: 0 auto 35px;
             line-height: 1.5;
@@ -89,7 +83,7 @@
         }
         
         .author {
-            font-size: 1.8rem;
+            font-size: 1.7rem;
             font-style: italic;
             font-weight: 500;
             margin-top: 40px;
@@ -105,7 +99,7 @@
         
         .section-title {
             font-family: 'Playfair Display', serif;
-            font-size: 2.4rem;
+            font-size: 2.2rem;
             font-weight: 700;
             margin-bottom: 30px;
             color: #5a2d50;
@@ -125,14 +119,12 @@
         
         .section-content {
             margin-bottom: 50px;
-            page-break-inside: avoid;
         }
         
         .section-content p {
             margin-bottom: 25px;
             text-align: justify;
             font-size: 1.1rem;
-            line-height: 1.8;
         }
         
         .quote {
@@ -143,7 +135,6 @@
             font-style: italic;
             border-radius: 0 8px 8px 0;
             position: relative;
-            page-break-inside: avoid;
         }
         
         .quote p {
@@ -170,7 +161,6 @@
             padding: 25px;
             margin: 30px 0;
             border-left: 5px solid #9c4668;
-            page-break-inside: avoid;
         }
         
         .promise-title {
@@ -179,43 +169,48 @@
             font-weight: bold;
             margin-bottom: 15px;
             color: #5a2d50;
-            font-size: 1.4rem;
+            font-size: 1.3rem;
         }
         
         .promise-title .icon {
             margin-right: 10px;
-            font-size: 1.6rem;
+            font-size: 1.5rem;
         }
         
         .module-content {
             margin: 40px 0;
-            page-break-inside: avoid;
         }
         
         .module-title {
             font-family: 'Playfair Display', serif;
-            font-size: 2rem;
-            margin: 40px 0 25px;
+            font-size: 1.8rem;
+            margin: 30px 0 20px;
             color: #7a355e;
             position: relative;
-            padding-left: 35px;
+            padding-left: 30px;
         }
         
         .module-title::before {
             content: "";
             position: absolute;
             left: 0;
-            top: 15px;
-            width: 25px;
-            height: 25px;
+            top: 12px;
+            width: 20px;
+            height: 20px;
             background: #e8a0c0;
             border-radius: 50%;
         }
+
+        .module-subtitle {
+            font-size: 1.4rem;
+            margin: 25px 0 15px;
+            color: #5a2d50;
+            font-weight: 600;
+        }
         
         .episode-list {
-            margin: 25px 0 35px;
-            padding-left: 35px;
-            page-break-inside: avoid;
+            margin: 20px 0 30px;
+            padding-left: 30px;
         }
         
         .episode-list li {
@@ -227,78 +222,69 @@
             content: "•";
             color: #e8a0c0;
             font-weight: bold;
-            font-size: 1.5rem;
             position: absolute;
-            left: -25px;
-            top: -3px;
+            left: -20px;
         }
         
         .example-box {
             background: #fdf3f7;
             border-radius: 8px;
-            padding: 25px;
-            margin: 30px 0;
+            padding: 20px;
+            margin: 25px 0;
             border: 1px dashed #e8a0c0;
-            page-break-inside: avoid;
         }
         
         .example-title {
             font-weight: bold;
-            margin-bottom: 15px;
+            margin-bottom: 10px;
             color: #9c4668;
             display: flex;
             align-items: center;
-            font-size: 1.3rem;
         }
         
         .example-title .icon {
-            margin-right: 12px;
-            font-size: 1.5rem;
+            margin-right: 10px;
         }
         
         .evidence-box {
             background: #f0e6f4;
             border-radius: 8px;
-            padding: 25px;
-            margin: 30px 0;
+            padding: 20px;
+            margin: 25px 0;
             border-left: 4px solid #8e6aa0;
-            page-break-inside: avoid;
         }
         
         .evidence-title {
             font-weight: bold;
-            margin-bottom: 15px;
+            margin-bottom: 10px;
             color: #5a2d50;
             display: flex;
             align-items: center;
-            font-size: 1.3rem;
         }
         
         .evidence-title .icon {
-            margin-right: 12px;
-            font-size: 1.5rem;
+            margin-right: 10px;
         }
         
         .signs-container {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin: 35px 0;
-            page-break-inside: avoid;
+            gap: 25px;
+            margin: 30px 0;
         }
         
         .signs-box {
             background: #fff;
             border-radius: 8px;
-            padding: 30px 25px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            padding: 25px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
             border-top: 4px solid #e8a0c0;
         }
         
         .signs-title {
             font-family: 'Playfair Display', serif;
-            font-size: 1.5rem;
-            margin-bottom: 20px;
+            font-size: 1.3rem;
+            margin-bottom: 15px;
             color: #7a355e;
             text-align: center;
         }
@@ -309,7 +295,7 @@
         }
         
         .signs-list li {
-            padding: 10px 0;
+            padding: 8px 0;
             border-bottom: 1px solid #f0e6f4;
             display: flex;
             align-items: flex-start;
@@ -322,30 +308,46 @@
         .signs-list li::before {
             content: "→";
             color: #e8a0c0;
-            margin-right: 12px;
-            font-size: 1.2rem;
+            margin-right: 10px;
         }
         
         .module-summary {
             background: #f8f4ff;
             border-radius: 10px;
-            padding: 30px;
-            margin: 30px 0;
+            padding: 25px;
+            margin: 25px 0;
             border-left: 3px solid #9c4668;
-            page-break-inside: avoid;
         }
         
         .module-summary h4 {
             font-family: 'Playfair Display', serif;
-            font-size: 1.6rem;
-            margin-bottom: 20px;
+            font-size: 1.4rem;
+            margin-bottom: 15px;
             color: #5a2d50;
         }
         
         .module-summary p {
             margin-bottom: 15px;
-            font-size: 1.1rem;
-            line-height: 1.7;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 40px 0 20px;
+            margin-top: 40px;
+            border-top: 1px solid #f0e6f4;
+        }
+        
+        .footer-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            color: #5a2d50;
+            margin-bottom: 15px;
+        }
+        
+        .copyright {
+            font-style: italic;
+            color: #7a355e;
+            margin-top: 20px;
         }
         
         /* Botão de impressão */
@@ -356,80 +358,18 @@
             background: #7a355e;
             color: white;
             border: none;
-            padding: 15px 30px;
+            padding: 12px 25px;
             border-radius: 30px;
-            font-size: 1.1rem;
+            font-size: 1rem;
             cursor: pointer;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
             transition: all 0.3s ease;
             z-index: 1000;
-            display: flex;
-            align-items: center;
-            gap: 10px;
         }
         
         .print-button:hover {
             background: #5a2d50;
-            transform: translateY(-3px);
-            box-shadow: 0 8px 20px rgba(0,0,0,0.25);
-        }
-        
-        /* Estilos específicos para impressão */
-        @media print {
-            body {
-                background: #fff !important;
-                padding: 0;
-                margin: 0;
-                display: block;
-            }
-            
-            .ebook-container {
-                box-shadow: none;
-                max-width: 100%;
-                margin: 0;
-            }
-            
-            .cover {
-                background: linear-gradient(135deg, #f9d6e4 0%, #f8c0d5 30%, #e8a0c0 100%) !important;
-                -webkit-print-color-adjust: exact;
-                color-adjust: exact;
-                min-height: 100vh;
-                height: 100vh;
-                page-break-after: always;
-            }
-            
-            .ebook-content {
-                padding: 40px 60px !important;
-                background: white !important;
-            }
-            
-            .print-button {
-                display: none;
-            }
-            
-            .promise-box, .quote, .example-box, .evidence-box, .module-summary {
-                -webkit-print-color-adjust: exact;
-                color-adjust: exact;
-            }
-            
-            .section-title::after, .cover-subtitle::after {
-                -webkit-print-color-adjust: exact;
-                color-adjust: exact;
-            }
-            
-            /* Quebras de página */
-            .section-content {
-                page-break-before: always;
-                page-break-after: avoid;
-            }
-            
-            .section-content:first-child {
-                page-break-before: avoid;
-            }
-            
-            .signs-container {
-                page-break-inside: avoid;
-            }
+            transform: translateY(-2px);
         }
         
         /* Responsividade */
@@ -438,10 +378,10 @@
                 font-size: 2.8rem;
             }
             .cover-subtitle {
-                font-size: 1.6rem;
+                font-size: 1.4rem;
             }
             .author {
-                font-size: 1.5rem;
+                font-size: 1.4rem;
             }
             .section-title {
                 font-size: 2rem;
@@ -449,17 +389,14 @@
             .ebook-content {
                 padding: 40px 30px;
             }
-            .module-title {
-                font-size: 1.7rem;
-            }
         }
         
         @media (max-width: 480px) {
             .cover-title {
-                font-size: 2.3rem;
+                font-size: 2.2rem;
             }
             .cover-subtitle {
-                font-size: 1.3rem;
+                font-size: 1.2rem;
             }
             .cover {
                 padding: 20px 15px;
@@ -470,42 +407,127 @@
             .signs-container {
                 grid-template-columns: 1fr;
             }
+        }
+        
+        /* Estilos específicos para impressão */
+        @media print {
+            @page {
+                size: A4;
+                margin: 15mm;
+                padding: 0;
+                @top-left { content: none; }
+                @top-right { content: none; }
+                @bottom-left { content: none; }
+                @bottom-right { content: none; }
+                @bottom-center { content: none; }
+                @top-center { content: none; }
+            }
+            
+            body {
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+            
             .print-button {
-                padding: 12px 20px;
-                font-size: 1rem;
-                bottom: 15px;
-                right: 15px;
+                display: none;
+            }
+            
+            .section-title {
+                page-break-before: always;
+            }
+            
+            .section-content {
+                page-break-inside: avoid;
+            }
+            
+            .cover {
+                page-break-after: always;
+            }
+            
+            .quote, .example-box, .evidence-box, .promise-box, .signs-box, .module-summary {
+                page-break-inside: avoid;
+            }
+            
+            body, .ebook-container {
+                background: white;
+                box-shadow: none;
+                max-width: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            
+            .cover {
+                background: white !important;
+                min-height: auto;
+                height: 100vh;
+            }
+            
+            .cover-subtitle::after {
+                background: #9c4668;
+            }
+            
+            .quote::before {
+                color: #d8a0b5;
+            }
+            
+            /* Remover gradientes para melhor legibilidade em papel */
+            .promise-box {
+                background: #f9f0f4 !important;
+            }
+            
+            .signs-box, .evidence-box, .example-box, .module-summary {
+                box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+                border: 1px solid #e0d0d8;
+            }
+            
+            /* Melhorar contraste para impressão */
+            .cover-title, .cover-subtitle, .author, 
+            .section-title, .module-title, .module-subtitle,
+            .signs-title, .footer-title {
+                color: #4a1d40 !important;
+            }
+            
+            /* Remover elementos decorativos que não funcionam bem em impressão */
+            .cover::before, .cover::after,
+            .section-title::after, .cover-subtitle::after {
+                display: none;
+            }
+            
+            /* Ajustar tamanhos de fonte para impressão */
+            body {
+                font-size: 12pt;
+            }
+            
+            .cover-title {
+                font-size: 2.5rem;
+            }
+            
+            .cover-subtitle {
+                font-size: 1.5rem;
+            }
+            
+            .author {
+                font-size: 1.3rem;
+            }
+            
+            .section-title {
+                font-size: 1.8rem;
+            }
+            
+            .module-title {
+                font-size: 1.5rem;
+            }
+            
+            .quote p {
+                font-size: 1.1rem;
             }
         }
-        
-        /* Decoração */
-        .floral-divider {
-            width: 100px;
-            height: 20px;
-            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 20'%3E%3Cpath d='M10,5 Q15,0 20,5 T30,5 T40,5 T50,5 T60,5 T70,5 T80,5 T90,5 T100,5' stroke='%23e8a0c0' stroke-width='2' fill='none'/%3E%3Ccircle cx='10' cy='5' r='2' fill='%23e8a0c0'/%3E%3Ccircle cx='30' cy='5' r='2' fill='%23e8a0c0'/%3E%3Ccircle cx='50' cy='5' r='2' fill='%23e8a0c0'/%3E%3Ccircle cx='70' cy='5' r='2' fill='%23e8a0c0'/%3E%3Ccircle cx='90' cy='5' r='2' fill='%23e8a0c0'/%3E%3C/svg%3E");
-            background-repeat: no-repeat;
-            background-position: center;
-            margin: 40px auto;
-        }
-        
-        .page-footer {
-            text-align: center;
-            margin-top: 40px;
-            padding-top: 20px;
-            border-top: 1px solid #f0e6f4;
-            font-style: italic;
-            color: #7a355e;
-        }
     </style>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <button class="print-button" onclick="window.print()">
-        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <polyline points="6 9 6 2 18 2 18 9"></polyline>
-            <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path>
-            <rect x="6" y="14" width="12" height="8"></rect>
-        </svg>
-        Imprimir Ebook
+        🖨️ Imprimir Ebook
     </button>
     
     <div class="ebook-container">
@@ -542,14 +564,12 @@
                 <div class="quote">
                     <p>"O amor não consiste em olhar um para o outro, mas em olharem juntos na mesma direção." - Antoine de Saint-Exupéry</p>
                 </div>
-                
-                <div class="floral-divider"></div>
             </section>
             
             <!-- Módulo 1 -->
             <section class="section-content">
-                <h2 class="section-title">Módulo 1 – O Céu Antes da Tormenta</h2>
-                <h3 class="module-title">O que realmente é o Transtorno Bipolar (e por que não é só "mudança de humor")</h3>
+                <h2 class="section-title">Módulo 1 – O que realmente é o Transtorno Bipolar</h2>
+                <h3 class="module-title">(e por que não é só "mudança de humor")</h3>
                 
                 <p>Se você já conviveu com alguém bipolar, provavelmente pensou: "Nossa, mas ontem ele estava tão bem... e hoje parece outra pessoa!".</p>
                 
@@ -579,14 +599,12 @@
                     <p>Pesquisas em neurociência mostram que, durante as fases de mania ou depressão, há alterações nos neurotransmissores do cérebro, como dopamina e serotonina. Essas mudanças influenciam diretamente o comportamento, a motivação e a forma de se relacionar. Isso explica por que não adianta só "pedir para a pessoa se controlar" -- é como pedir para alguém gripado "parar de espirrar".</p>
                     <p>Quando você entende isso, para de levar tudo para o lado pessoal e começa a enxergar a relação com mais empatia e estratégia.</p>
                 </div>
-                
-                <div class="page-footer">Amar Entre Tempestades | Página 2</div>
             </section>
             
             <!-- Módulo 2 -->
             <section class="section-content">
-                <h2 class="section-title">Módulo 2 – Olhando o Temporal de Perto</h2>
-                <h3 class="module-title">Como identificar sinais precoces (e evitar crises)</h3>
+                <h2 class="section-title">Módulo 2 – Como identificar sinais precoces</h2>
+                <h3 class="module-title">(e evitar crises)</h3>
                 
                 <p>Uma das coisas mais difíceis de quem convive com um bipolar é perceber <strong>quando algo está prestes a mudar</strong>. De repente, a pessoa que estava bem começa a dormir menos, falar mais rápido, ou então se isola completamente.</p>
                 
@@ -628,126 +646,364 @@
                     <p>Estudos mostram que crises de bipolaridade quase nunca surgem "do nada". Elas são precedidas por pequenas mudanças comportamentais e fisiológicas, como alteração no sono e na impulsividade. Reconhecer esses sinais é como ver a luz de alerta no painel do carro: quanto antes você age, menos dano acontece.</p>
                     <p>Saber identificar esses gatilhos não só evita brigas no relacionamento, mas também ajuda a proteger a saúde mental de quem você ama -- e a sua própria paz.</p>
                 </div>
-                
-                <div class="page-footer">Amar Entre Tempestades | Página 3</div>
             </section>
             
             <!-- Módulo 3 -->
             <section class="section-content">
-                <h2 class="section-title">Módulo 3 – Quando a Tempestade Mora no Cérebro</h2>
+                <h2 class="section-title">Módulo 3 – Como conversar sem brigar</h2>
+                <h3 class="module-title">(mesmo durante uma crise)</h3>
                 
-                <div class="module-summary">
-                    <h4>Explicação da química por trás do transtorno</h4>
-                    <p>Este módulo explora os mecanismos neurológicos do transtorno bipolar, incluindo o papel dos neurotransmissores como dopamina e serotonina, o impacto do lítio no tratamento, e como a medicação contribui para a estabilidade emocional.</p>
+                <p>Viver com alguém que tem transtorno bipolar pode transformar uma simples conversa em um campo minado. Durante uma fase de mania ou depressão, as emoções ficam à flor da pele, e qualquer palavra mal colocada pode virar uma discussão enorme.</p>
+                
+                <p>A boa notícia? Dá pra conversar de forma estratégica, sem guerra, e ainda fortalecer a relação.</p>
+                
+                <h4 class="module-subtitle">Dicas práticas para evitar conflitos:</h4>
+                <ul class="episode-list">
+                    <li><strong>Escolha o momento certo:</strong> não tente discutir algo sério no auge de uma crise. Espere a pessoa estar mais calma ou estável.</li>
+                    <li><strong>Fale sem acusar:</strong> em vez de "Você é irresponsável!", diga "Eu fico preocupada quando vejo você gastando assim".</li>
+                    <li><strong>Ouça de verdade:</strong> muitas vezes, só dar espaço para a pessoa desabafar já diminui a tensão.</li>
+                    <li><strong>Defina limites com carinho:</strong> entender não é permitir tudo. É possível apoiar e ainda assim se proteger emocionalmente.</li>
+                </ul>
+                
+                <div class="example-box">
+                    <div class="example-title">
+                        <span class="icon">💡</span> Exemplo real
+                    </div>
+                    <p>"Quando meu parceiro está em mania, ele fala sem parar e fica irritado se eu tento interromper. Antes, eu revidava e virava uma briga feia. Hoje, eu digo: 'Eu quero muito te ouvir, mas preciso que fale mais devagar pra eu acompanhar'. Isso evita discussões e faz ele se sentir respeitado."</p>
                 </div>
                 
-                <div class="page-footer">Amar Entre Tempestades | Página 4</div>
+                <div class="evidence-box">
+                    <div class="evidence-title">
+                        <span class="icon">🔎</span> Por que isso faz sentido (embasamento)
+                    </div>
+                    <p>A comunicação não-violenta tem base em estudos de psicologia que mostram como substituir acusações por observações e sentimentos reduz a defensividade. Além disso, especialistas em relacionamentos apontam que casais que desenvolvem "acordos de comunicação" -- como esperar momentos de calma para discutir -- têm menos desgaste emocional e mais conexão.</p>
+                    <p>Ou seja: não é só "ser boazinha", é usar estratégias que funcionam de verdade para transformar brigas em conversas construtivas.</p>
+                </div>
             </section>
             
             <!-- Módulo 4 -->
             <section class="section-content">
-                <h2 class="section-title">Módulo 4 – A Ciência que Acalma os Céus</h2>
+                <h2 class="section-title">Módulo 4 – Os erros que mais destroem relacionamentos</h2>
+                <h3 class="module-title">(e como evitar)</h3>
                 
-                <div class="module-summary">
-                    <h4>Discussão sobre medicamentos e terapias</h4>
-                    <p>Análise de como diferentes abordagens terapêuticas atuam para transformar tempestades emocionais em períodos de calmaria, incluindo terapia cognitivo-comportamental, terapia familiar e intervenções medicamentosas.</p>
+                <p>Muita gente ama de verdade alguém com transtorno bipolar, mas sem perceber, comete erros que minam a relação. E não é por mal... é porque ninguém ensina como lidar com isso!</p>
+                <p>A boa notícia é que, ao identificar esses erros, você pode evitá-los e transformar a convivência.</p>
+                
+                <h4 class="module-subtitle">Erros mais comuns:</h4>
+                <ul class="episode-list">
+                    <li><strong>Levar para o lado pessoal:</strong> quando seu parceiro está em crise e fala algo duro, não significa que "não te ama mais". Muitas vezes, é a doença falando.</li>
+                    <li><strong>Querer controlar tudo:</strong> tentar "resolver" o humor da pessoa só gera frustração. Você não é terapeuta, você é parceiro.</li>
+                    <li><strong>Ignorar seus próprios limites:</strong> amar não é se anular.</li>
+                    <li><strong>Fingir que está tudo bem:</strong> empurrar problemas para debaixo do tapete só faz eles crescerem.</li>
+                    <li><strong>Falta de informação:</strong> não estudar sobre o transtorno é como tentar pilotar um avião sem nunca ter feito curso de voo.</li>
+                </ul>
+                
+                <div class="example-box">
+                    <div class="example-title">
+                        <span class="icon">💡</span> Exemplo real
+                    </div>
+                    <p>"Eu vivia tentando fazer meu namorado 'parar de exagerar' durante a mania. Eu brigava, gritava, cobrava... até perceber que isso só piorava. Quando comecei a estudar sobre bipolaridade e mudei minha abordagem, nossa relação mudou completamente."</p>
                 </div>
                 
-                <div class="page-footer">Amar Entre Tempestades | Página 5</div>
+                <div class="evidence-box">
+                    <div class="evidence-title">
+                        <span class="icon">🔎</span> Por que isso faz sentido (embasamento)
+                    </div>
+                    <p>Estudos sobre inteligência emocional mostram que entender e nomear as emoções reduz conflitos e aumenta a sensação de segurança dentro do relacionamento. Além disso, pesquisas de terapia familiar indicam que casais e familiares que aprendem sobre transtorno bipolar têm 40% menos recaídas graves, porque deixam de reagir com raiva e passam a lidar com empatia e limites claros.</p>
+                    <p>Ou seja, informação não só salva relacionamentos -- como também protege sua saúde emocional.</p>
+                </div>
             </section>
             
             <!-- Módulo 5 -->
             <section class="section-content">
-                <h2 class="section-title">Módulo 5 – Amar no Olho do Furacão</h2>
+                <h2 class="section-title">Módulo 5 – Quando ajudar e quando se proteger</h2>
+                <h3 class="module-title">(o equilíbrio que salva a relação)</h3>
                 
-                <div class="module-summary">
-                    <h4>Mantendo o amor vivo durante o caos</h4>
-                    <p>Estratégias para preservar a conexão emocional mesmo durante as fases mais intensas do transtorno, mantendo o relacionamento saudável quando as tempestades parecem maiores que a calmaria.</p>
+                <p>Amar alguém com transtorno bipolar não significa carregar o mundo nas costas. Existe uma linha muito fina entre apoiar e se afundar junto. E entender onde está esse limite é a chave para manter a relação saudável (e sua sanidade também).</p>
+                
+                <div class="signs-container">
+                    <div class="signs-box">
+                        <h4 class="signs-title">Quando ajudar:</h4>
+                        <ul class="signs-list">
+                            <li>Durante crises, ser um ponto de apoio emocional sem julgamento</li>
+                            <li>Incentivar a pessoa a buscar ajuda profissional e seguir o tratamento</li>
+                            <li>Lembrar que pequenas atitudes podem evitar discussões inúteis</li>
+                            <li>Ajudar a identificar sinais de alerta antes que a crise piore</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="signs-box">
+                        <h4 class="signs-title">Quando se proteger:</h4>
+                        <ul class="signs-list">
+                            <li>Quando a relação começa a afetar sua saúde mental</li>
+                            <li>Quando você sente que está mais cansado(a) do que feliz</li>
+                            <li>Quando existem abusos verbais ou emocionais</li>
+                            <li>Quando você tenta "salvar" alguém às custas de si mesmo(a)</li>
+                        </ul>
+                    </div>
                 </div>
                 
-                <div class="page-footer">Amar Entre Tempestades | Página 6</div>
+                <div class="example-box">
+                    <div class="example-title">
+                        <span class="icon">💡</span> Exemplo real
+                    </div>
+                    <p>"Eu ficava dias sem dormir porque tinha medo de deixar meu parceiro sozinho durante uma crise. Até que um terapeuta me disse: 'Se você não descansar, não vai conseguir ajudar ninguém'. Aprendi a colocar limites sem deixar de amar."</p>
+                </div>
+                
+                <div class="evidence-box">
+                    <div class="evidence-title">
+                        <span class="icon">🔎</span> Por que isso faz sentido (embasamento)
+                    </div>
+                    <p>Estudos em psicologia clínica mostram que quem convive com alguém com transtorno bipolar tem maior risco de desenvolver ansiedade e exaustão emocional quando não define limites. Pesquisas também apontam que relacionamentos com fronteiras claras reduzem conflitos e fortalecem a conexão, porque ambos os lados sabem até onde podem ir sem se ferir.</p>
+                    <p>Ou seja: amar não é se perder -- é encontrar equilíbrio entre apoiar e se proteger.</p>
+                </div>
             </section>
             
             <!-- Módulo 6 -->
             <section class="section-content">
-                <h2 class="section-title">Módulo 6 – Quando o Cuidado Vira Peso</h2>
+                <h2 class="section-title">Módulo 6 – Estratégias práticas</h2>
+                <h3 class="module-title">(para reduzir conflitos e salvar a relação)</h3>
                 
-                <div class="module-summary">
-                    <h4>O equilíbrio entre apoio e autocuidado</h4>
-                    <p>Importância de entender que você não é o salvador da pessoa com transtorno bipolar: como acompanhar sem perder a si mesmo e estabelecer limites saudáveis.</p>
+                <p>Conviver com alguém com transtorno bipolar não precisa ser uma guerra. Com algumas estratégias simples, você pode transformar discussões em conversas produtivas e evitar brigas desnecessárias.</p>
+                
+                <h4 class="module-subtitle">1. Escolha a hora certa para conversar</h4>
+                <p>Durante um episódio de mania ou depressão, a lógica muitas vezes dá lugar à emoção. Tentar "resolver tudo" nesse momento só piora. Espere a pessoa estar mais estável para ter conversas importantes.</p>
+                
+                <div class="example-box">
+                    <div class="example-title">
+                        <span class="icon">💡</span> Exemplo real
+                    </div>
+                    <p>"Meu marido queria discutir a conta do cartão às 2 da manhã, em plena fase de mania. Eu aprendi a dizer: 'Amor, vamos falar disso amanhã, quando estivermos mais calmos?'. Parece simples, mas salvou dezenas de brigas."</p>
                 </div>
                 
-                <div class="page-footer">Amar Entre Tempestades | Página 7</div>
+                <h4 class="module-subtitle">2. Use linguagem neutra</h4>
+                <p>Evite acusações como "você sempre..." ou "você nunca...". Em vez disso, use frases que descrevem como você se sente:</p>
+                <ul class="episode-list">
+                    <li>"Eu me sinto inseguro quando..."</li>
+                    <li>"Eu preciso de..."</li>
+                </ul>
+                <p>Isso diminui a defensividade e abre espaço para diálogo.</p>
+                
+                <h4 class="module-subtitle">3. Tenha um "plano de crise"</h4>
+                <p>Combine sinais de alerta e o que fazer caso a situação fuja do controle:</p>
+                <ul class="episode-list">
+                    <li>"Se eu notar que você está muito acelerado, podemos ligar para o psiquiatra?"</li>
+                    <li>"Se você não estiver bem, posso cuidar das tarefas da casa por uns dias."</li>
+                </ul>
+                <p>Essa abordagem preventiva evita desgastes.</p>
+                
+                <h4 class="module-subtitle">4. Cuide de você também</h4>
+                <p>Relacionamentos só funcionam quando ambos têm energia para amar. Reserve tempo para si mesmo(a), faça terapia se possível e mantenha sua rede de apoio.</p>
+                
+                <div class="evidence-box">
+                    <div class="evidence-title">
+                        <span class="icon">🔎</span> Por que isso faz sentido (embasamento)
+                    </div>
+                    <p>Estudos de terapia de casais mostram que a comunicação assertiva reduz em até 50% os conflitos em relacionamentos onde existe transtorno bipolar. Além disso, a psicoeducação -- aprender sobre o transtorno e criar estratégias práticas -- aumenta a sensação de segurança e diminui a sobrecarga emocional de quem convive com o bipolar.</p>
+                    <p>Quando você troca críticas por empatia e organização, a relação deixa de ser um campo de batalha e se torna um time jogando junto contra a bipolaridade.</p>
+                </div>
             </section>
             
             <!-- Módulo 7 -->
             <section class="section-content">
-                <h2 class="section-title">Módulo 7 – Entre Crises e Calmarias</h2>
+                <h2 class="section-title">Módulo 7 – O lado químico da bipolaridade</h2>
+                <h3 class="module-title">(e por que não é falta de força de vontade)</h3>
                 
-                <div class="module-summary">
-                    <h4>Estratégias práticas para relacionamentos</h4>
-                    <p>Técnicas emocionais e práticas para manter a relação saudável mesmo durante os piores dias, incluindo comunicação não violenta e planejamento conjunto para crises.</p>
+                <p>Quando você entende que a bipolaridade não é só "comportamento difícil", mas sim algo que acontece no cérebro, tudo muda. Não é sobre "ser forte" ou "ter mais controle". É sobre química cerebral -- e a ciência já explica isso muito bem.</p>
+                
+                <h4 class="module-subtitle">1. O que acontece no cérebro</h4>
+                <p>O transtorno bipolar envolve desequilíbrios em neurotransmissores -- os mensageiros químicos do cérebro:</p>
+                <ul class="episode-list">
+                    <li><strong>Dopamina:</strong> regula motivação, prazer e energia. Em fases de mania, ela dispara, deixando a pessoa acelerada e cheia de ideias.</li>
+                    <li><strong>Serotonina:</strong> está ligada ao bem-estar e ao humor. Em crises depressivas, os níveis caem, gerando tristeza profunda e falta de ânimo.</li>
+                    <li><strong>Noradrenalina:</strong> influencia foco e alerta. Pode estar elevada na mania e muito baixa na depressão.</li>
+                </ul>
+                <p>Essas oscilações não acontecem porque a pessoa "quer". É um fenômeno biológico, comprovado por exames de neuroimagem que mostram alterações nas áreas do cérebro responsáveis por emoções e tomada de decisão.</p>
+                
+                <h4 class="module-subtitle">2. Por que os medicamentos ajudam</h4>
+                <p>Se você já ouviu falar de <strong>lítio</strong>, estabilizadores de humor ou antidepressivos, eles não estão aí "à toa". Eles agem diretamente nesses neurotransmissores:</p>
+                <ul class="episode-list">
+                    <li><strong>Lítio:</strong> considerado padrão-ouro no tratamento do transtorno bipolar, ajuda a regular a dopamina e estabilizar os ciclos de humor.</li>
+                    <li><strong>Anticonvulsivantes:</strong> reduzem a excitação excessiva dos neurônios, diminuindo sintomas de mania.</li>
+                    <li><strong>Antipsicóticos e antidepressivos:</strong> equilibram sintomas depressivos e controlam impulsos.</li>
+                </ul>
+                
+                <div class="evidence-box">
+                    <div class="evidence-title">
+                        <span class="icon">🔎</span> Por que isso faz sentido (embasamento)
+                    </div>
+                    <p>Estudos de neurociência confirmam que o transtorno bipolar está associado a alterações nas áreas do cérebro responsáveis por emoção e decisão, como o córtex pré-frontal e a amígdala. Pesquisas com ressonância magnética funcional mostram que, durante crises, essas áreas se comportam de forma diferente do que em cérebros sem a condição.</p>
+                    <p>Além disso, revisões científicas comprovam que o uso de estabilizadores de humor como o lítio reduz significativamente a frequência e a intensidade das crises, melhorando não só os sintomas, mas também a qualidade dos relacionamentos.</p>
                 </div>
-                
-                <div class="page-footer">Amar Entre Tempestades | Página 8</div>
             </section>
             
             <!-- Módulo 8 -->
             <section class="section-content">
-                <h2 class="section-title">Módulo 8 – A Arte de Acompanhar, Não de Carregar</h2>
+                <h2 class="section-title">Módulo 8 – Química não é mágica</h2>
+                <h3 class="module-title">(é o que devolve o equilíbrio)</h3>
                 
-                <div class="module-summary">
-                    <h4>Diferença entre apoiar e se anular</h4>
-                    <p>Como estabelecer limites saudáveis e, se necessário, encerrar uma relação sem se afogar na culpa, preservando sua saúde mental e bem-estar.</p>
+                <p>Quando você convive com alguém com bipolaridade e finalmente vê a estabilidade chegar, pode parecer um "milagre". Como se a tempestade tivesse passado de repente. Mas a verdade é que essa calmaria não é obra do acaso --- <strong>é ciência</strong>.</p>
+                
+                <h4 class="module-subtitle">1. Por que a estabilidade precisa de química</h4>
+                <p>Muita gente ainda acredita que o transtorno bipolar é só "falta de controle". Mas não é. Ele é profundamente ligado à <strong>bioquímica do cérebro</strong>. Nosso humor é regulado por neurotransmissores como dopamina, serotonina e noradrenalina. Em um cérebro equilibrado, essas substâncias fluem de forma harmônica. Já no cérebro bipolar, esse sistema tem um "termostato emocional" desregulado.</p>
+                
+                <div class="quote">
+                    <p>A medicação não muda a personalidade da pessoa - ela devolve o equilíbrio químico para que a verdadeira personalidade possa florescer, sem ser distorcida pelos extremos.</p>
                 </div>
                 
-                <div class="page-footer">Amar Entre Tempestades | Página 9</div>
+                <h4 class="module-subtitle">2. Como os medicamentos atuam no cérebro</h4>
+                <p>Nenhum remédio age da noite para o dia - o cérebro precisa de tempo para se reajustar:</p>
+                <ul class="episode-list">
+                    <li><strong>Lítio:</strong> Atua regulando os níveis de dopamina e noradrenalina, reduzindo os extremos de humor.</li>
+                    <li><strong>Anticonvulsivantes:</strong> Diminuem a excitação excessiva dos neurônios.</li>
+                    <li><strong>Antipsicóticos atípicos:</strong> Ajudam no controle de sintomas mais intensos.</li>
+                    <li><strong>Antidepressivos:</strong> Usados com cautela e sempre acompanhados de estabilizadores.</li>
+                </ul>
+                
+                <div class="example-box">
+                    <div class="example-title">
+                        <span class="icon">💡</span> Exemplo real
+                    </div>
+                    <p>"Quando meu parceiro começou o tratamento com lítio, eu tinha medo de que ele mudasse. Mas, com o tempo, percebi o oposto: ele ficou mais presente, mais coerente, mais ele. Não estávamos mais reféns das explosões ou dos silêncios profundos. Era como poder viver a dois, e não entre crises."</p>
+                </div>
+                
+                <h4 class="module-subtitle">3. Por que não se deve parar o tratamento</h4>
+                <p>É comum a pessoa pensar, após algumas semanas de estabilidade: <strong>"Já estou curado. Posso parar."</strong> Mas esse é um erro perigoso. A medicação não "cura" a bipolaridade - ela <strong>controla</strong>.</p>
+                
+                <div class="evidence-box">
+                    <div class="evidence-title">
+                        <span class="icon">🔎</span> Embasamento importante
+                    </div>
+                    <p>Estudos mostram que quem mantém o uso contínuo de estabilizadores tem até <strong>70% menos recaídas</strong> do que quem interrompe o tratamento. Além disso, os relacionamentos melhoram com o uso regular da medicação, já que há menos brigas, menos impulsividade e mais segurança emocional.</p>
+                </div>
+                
+                <div class="quote">
+                    <p>Medicação não é fraqueza. É autocuidado. Estabilidade não é mágica. É ciência aplicada com constância.</p>
+                </div>
             </section>
             
             <!-- Módulo 9 -->
             <section class="section-content">
-                <h2 class="section-title">Módulo 9 – Guia de Navegação</h2>
+                <h2 class="section-title">Módulo 9 – Checklist prático</h2>
+                <h3 class="module-title">(sinais de alerta e ferramentas para o dia a dia)</h3>
                 
-                <div class="module-summary">
-                    <h4>Checklist poético e prático</h4>
-                    <p>Bússolas essenciais para quem ama no meio das tempestades: recursos práticos, lembretes emocionais e estratégias de curto e longo prazo para navegar pelo transtorno bipolar.</p>
+                <p>Conviver com alguém com transtorno bipolar não significa viver "pisando em ovos". Com informação e algumas estratégias, é possível ter uma relação saudável, estável e até divertida.</p>
+                
+                <h4 class="module-subtitle">1. Sinais de alerta para observar</h4>
+                
+                <div class="signs-container">
+                    <div class="signs-box">
+                        <h4 class="signs-title">Fase de mania/hipomania:</h4>
+                        <ul class="signs-list">
+                            <li>Fala acelerada e muitos planos de uma só vez</li>
+                            <li>Gastos excessivos ou comportamentos impulsivos</li>
+                            <li>Pouca necessidade de soma</li>
+                            <li>Irritabilidade incomum ou impaciência</li>
+                            <li>Autoconfiança fora do normal</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="signs-box">
+                        <h4 class="signs-title">Fase de depressão:</h4>
+                        <ul class="signs-list">
+                            <li>Falta de energia ou de interesse</li>
+                            <li>Alterações no apetite e no sono</li>
+                            <li>Isolamento social</li>
+                            <li>Sentimentos de inutilidade</li>
+                            <li>Dificuldade para tomar decisões</li>
+                        </ul>
+                    </div>
                 </div>
                 
-                <div class="page-footer">Amar Entre Tempestades | Página 10</div>
+                <h4 class="module-subtitle">2. Ferramentas práticas para o dia a dia</h4>
+                <ul class="episode-list">
+                    <li><strong>Comunicação direta:</strong> Fale com clareza e sem acusações</li>
+                    <li><strong>Rotina estruturada:</strong> Mantenha horários para sono, alimentação e medicação</li>
+                    <li><strong>Registro de humor:</strong> Use aplicativos ou diários para identificar padrões</li>
+                    <li><strong>Rede de apoio:</strong> Não carregue tudo sozinho - busque profissionais e grupos</li>
+                    <li><strong>Acordos de crise:</strong> Combine "planos de ação" antecipadamente</li>
+                </ul>
+                
+                <div class="evidence-box">
+                    <div class="evidence-title">
+                        <span class="icon">🔎</span> Por que isso faz sentido (embasamento)
+                    </div>
+                    <p>Estudos sobre relacionamentos em contextos de saúde mental mostram que a previsibilidade reduz conflitos. Quanto mais você entende os sinais e tem estratégias combinadas, menor a chance de brigas destrutivas. Além disso, casais que trabalham juntos em planos de ação têm níveis maiores de confiança e estabilidade emocional.</p>
+                </div>
             </section>
             
             <!-- Módulo 10 -->
             <section class="section-content">
-                <h2 class="section-title">Módulo 10 – Depois da Tempestade</h2>
+                <h2 class="section-title">Módulo 10 – A diferença entre "cuidar" e "acompanhar"</h2>
+                <h3 class="module-title">(e quando é hora de ir embora)</h3>
                 
-                <div class="module-summary">
-                    <h4>Fechamento acolhedor</h4>
-                    <p>Reflexões finais sobre como o amor não é a ausência de tempestades, mas a capacidade de atravessá-las juntos e ainda encontrar o sol após a chuva.</p>
+                <p>Amar alguém com transtorno bipolar não significa assumir o papel de enfermeiro, terapeuta ou salvador. É comum, no início, sentir que você precisa "consertar" a pessoa que ama, mas isso só gera frustração e culpa. A verdade é: <strong>seu papel é acompanhar, não carregar o peso do mundo.</strong></p>
+                
+                <div class="signs-container">
+                    <div class="signs-box">
+                        <h4 class="signs-title">Cuidar:</h4>
+                        <ul class="signs-list">
+                            <li>Assumir responsabilidades que não são suas</li>
+                            <li>Controlar a medicação e vigiar cada passo</li>
+                            <li>Anular sua vida para "manter tudo estável"</li>
+                            <li>Gera desgaste, sufoca e cria ressentimento</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="signs-box">
+                        <h4 class="signs-title">Acompanhar:</h4>
+                        <ul class="signs-list">
+                            <li>Apoiar e estar presente</li>
+                            <li>Dar suporte emocional</li>
+                            <li>Incentivar o tratamento</li>
+                            <li>Sem abrir mão da sua saúde mental</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="quote">
+                    <p>Você pode oferecer a mão, mas não pode arrastar a pessoa contra a vontade dela. A responsabilidade pelo tratamento e pelas escolhas é dela.</p>
+                </div>
+                
+                <h4 class="module-subtitle">Quando o amor vira peso</h4>
+                <p>Relacionamentos só funcionam quando existe equilíbrio. Se você percebe que está constantemente exausto, triste, ou que não tem espaço para si mesmo, é hora de reavaliar:</p>
+                <ul class="episode-list">
+                    <li>Você sente que perdeu sua própria identidade?</li>
+                    <li>Tudo gira em torno das crises da outra pessoa?</li>
+                    <li>Você vive com medo de "piorar" a situação se fizer algo errado?</li>
+                </ul>
+                
+                <h4 class="module-subtitle">Como terminar sem culpa</h4>
+                <p>Encerrar um relacionamento com alguém que tem transtorno bipolar não é abandono. É um ato de cuidado consigo mesmo:</p>
+                <ul class="episode-list">
+                    <li><strong>Seja claro e gentil:</strong> explique que a decisão é sobre suas necessidades emocionais</li>
+                    <li><strong>Não faça promessas falsas:</strong> não diga "vamos ser amigos" se não estiver pronto</li>
+                    <li><strong>Sugira apoio profissional:</strong> incentive a pessoa a continuar o tratamento</li>
+                    <li><strong>Proteja sua paz:</strong> afaste-se com firmeza se houver manipulação</li>
+                </ul>
+                
+                <div class="evidence-box">
+                    <div class="evidence-title">
+                        <span class="icon">🔎</span> Por que isso faz sentido (embasamento)
+                    </div>
+                    <p>Estudos em psicologia de relacionamentos mostram que a codependência emocional é um dos maiores riscos para quem convive com alguém com transtorno mental. Quando você passa a viver para "cuidar", deixa de ter espaço para amar de forma saudável. Apoiar é possível. Sacrificar-se por completo, não.</p>
                 </div>
                 
                 <div class="quote">
                     <p>"A maior descoberta de qualquer geração é que um ser humano pode alterar sua vida alterando sua atitude." - William James</p>
                 </div>
-                
-                <div class="page-footer">Amar Entre Tempestades | Página 11</div>
             </section>
+            
+            <!-- Rodapé -->
+            <footer class="footer">
+                <div class="footer-content">
+                    <h3 class="footer-title">Amar Entre Tempestades</h3>
+                    <p>Identificar, Compreender e Amar Alguém com Transtorno Bipolar</p>
+                    
+                    <p class="copyright">© 2025 Fani Santana. Todos os direitos reservados.</p>
+                </div>
+            </footer>
         </div>
     </div>
-    
-    <script>
-        // Adiciona números de página dinamicamente
-        document.addEventListener('DOMContentLoaded', function() {
-            const sections = document.querySelectorAll('.section-content');
-            let pageNum = 2;
-            
-            sections.forEach((section, index) => {
-                const footer = section.querySelector('.page-footer');
-                if(footer) {
-                    footer.textContent = `Amar Entre Tempestades | Página ${pageNum}`;
-                    pageNum++;
-                }
-            });
-        });
-    </script>
 </body>
 </html>
